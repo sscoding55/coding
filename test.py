@@ -649,7 +649,7 @@ def metrics_fedavg(args,global_net,val_client_dataloaders,test_client_dataloader
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--methods',type=str,default='GAFSEG',help="selection from list:[LSSL,HSSF]")
-    parser.add_argument('--data',type=str,default='isic',help="selection from list:[polyp, isic]")
+    parser.add_argument('--data',type=str,default='polyp',help="datasets")
     parser.add_argument('--num_workers', type=int, default=8)
     parser.add_argument('--num_classes', type=int, default=2)
     parser.add_argument('--num_clients', type=int, default=5)
