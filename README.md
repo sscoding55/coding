@@ -17,7 +17,7 @@ Download the data and log folders from [GoogleDrive](https://drive.google.com/dr
 - Test the segmentation performance
 
   
-`python test.py --device 0 --img_path data --data polyp`
+`python test.py --device 0 --img_path data`
 
 
 
