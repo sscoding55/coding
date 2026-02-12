@@ -649,7 +649,7 @@ def metrics_fedavg(args,global_net,val_client_dataloaders,test_client_dataloader
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--methods',type=str,default='GAFSEG',help="selection from list:[LSSL,HSSF]")
-    parser.add_argument('--data',type=str,default='polyp',help="datasets")
+    parser.add_argument('--data',type=str,default='test',help="selection from list:[polyp, isic]")
     parser.add_argument('--num_workers', type=int, default=8)
     parser.add_argument('--num_classes', type=int, default=2)
     parser.add_argument('--num_clients', type=int, default=5)
@@ -672,10 +672,9 @@ if __name__ == "__main__":
     args = get_args()
     os.environ['CUDA_VISIBLE_DEVICES'] = args.device
     
-    if args.data == "polyp":
-        args.datasets = ['CVC-ColonDB', 'CVC-ClinicDB', 'EndoTect-ETIS', 'CVC-300', 'Kvasir']
-    elif args.data == "isic":
-        args.datasets = ['D1', 'D2', 'D3', 'D4', 'D5']
+    if args.data == "test":
+        args.datasets = ['C1', 'C2', 'C3', 'C4', 'C5']
+   
     
     
     args.model_dir = f"{args.log_dir}/{args.data}/{args.methods}" # path to checkpoints
